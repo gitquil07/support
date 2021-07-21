@@ -3,14 +3,30 @@ import Login from "./auth/Login";
 import Register from "./auth/Register";
 import ResetPassword from "./auth/ResetPassword";
 
+const routes = [
+    {
+        path: "/login",
+        component: Login
+    },
+    {
+        path: "/reset-password",
+        component: ResetPassword
+    },
+    {
+        path: "/register",
+        component: Register
+    }
+];
+
 const Routes = () => {
     return (
         <Switch>
-            <Route path="/login" component={Login} exact />
-            <Route path="/reset-password" component={ResetPassword} exact />
-            <Route path="/register" component={Register} exact />
+            {routes.map(route => (
+                <Route key={route.path} path={route.path} component={route.component} />
+            ))}
         </Switch>
     )
 }
 
 export default Routes;
+

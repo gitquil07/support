@@ -1,12 +1,12 @@
 import { ReactNode } from "react";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider, DefaultTheme } from "styled-components";
 
 type ThemeProps = {
     children: ReactNode,
 };
 
 const Theme = ({ children }: ThemeProps) => {
-    const theme = {
+    const theme: DefaultTheme = {
         colors: {
             primary: "#2678BE",
             black80: "#545353",
@@ -16,7 +16,7 @@ const Theme = ({ children }: ThemeProps) => {
 
         },
         fonts: {
-            grey: "#3A4248",
+
         },
         shadows: {
 

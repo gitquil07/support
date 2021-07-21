@@ -5,7 +5,7 @@ import { center_with_flex } from "../../styles";
 import LogoCDC from "../../assets/images/CDC-Logo.svg";
 
 type LoginProps = {
-
+    show: Boolean,
 }
 
 const Login = (props: LoginProps) => {
@@ -16,7 +16,7 @@ const Login = (props: LoginProps) => {
                 <span> O'zbekcha </span>
             </Language>
 
-            <Form>
+            <Form show={true}>
                 <Logo src={LogoCDC} alt="logo" />
             </Form>
 
@@ -36,15 +36,15 @@ const Language = styled.div`
     ${center_with_flex}
 `;
 
-
-const Form = styled.div`
-
+const Form = styled.div<LoginProps>`
+    width: ${({ show }) => show ? '100%' : '0'};
 `;
 
 const Logo = styled.img`
+    color: ${({ theme }) => theme.colors.primary};
     width: 200px;
     margin: auto;
-    display: block;
+    display: block; 
 `;
 
 const Footer = styled.div`
