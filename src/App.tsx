@@ -1,6 +1,8 @@
+import Routes from "./routes";
+
 const App = () => {
   return (
-    <h2>Support</h2>
+    <Routes />
   );
 }
 

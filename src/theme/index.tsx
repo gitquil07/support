@@ -9,6 +9,8 @@ const Theme = ({ children }: ThemeProps) => {
     const theme = {
         colors: {
             primary: "#2678BE",
+            black80: "#545353",
+            black60: "#7D7D7D"
         },
         boxModels: {
 
