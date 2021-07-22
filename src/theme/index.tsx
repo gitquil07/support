@@ -10,13 +10,16 @@ const Theme = ({ children }: ThemeProps) => {
         colors: {
             primary: "#2678BE",
             black80: "#545353",
+            black70: "#686868",
             black60: "#7D7D7D"
         },
         boxModels: {
-
+            inputBorder: "1px solid #E0E0E0;",
+            inputBorderFocus: "1px solid #2678BE;"
         },
         fonts: {
-
+            medium: "Roboto Medium",
+            regular: "Roboto Regular"
         },
         shadows: {
 

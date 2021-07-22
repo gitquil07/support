@@ -3,6 +3,8 @@ import Globe from "../../assets/icons/globe.svg";
 import styled from "styled-components";
 import { center_with_flex } from "../../styles";
 import LogoCDC from "../../assets/images/CDC-Logo.svg";
+import TextInput from "../../components/Inputs/TextInput";
+import { PrimaryButton } from "../../components/Buttons";
 
 type LoginProps = {
     show: Boolean,
@@ -18,6 +20,16 @@ const Login = (props: LoginProps) => {
 
             <Form show={true}>
                 <Logo src={LogoCDC} alt="logo" />
+
+                <Inputs>
+                    <TextInput placeholder="Email" required={true} onChange={() => { }} value="" />
+                    <TextInput placeholder="Пароль" required={true} onChange={() => { }} value="" />
+                </Inputs>
+
+                <Buttons>
+                    <PrimaryButton name="Войти" />
+                </Buttons>
+
             </Form>
 
             <Footer>
@@ -38,6 +50,8 @@ const Language = styled.div`
 
 const Form = styled.div<LoginProps>`
     width: ${({ show }) => show ? '100%' : '0'};
+    ${center_with_flex}
+    flex-direction: column;
 `;
 
 const Logo = styled.img`
@@ -57,3 +71,11 @@ const Footer = styled.div`
         color: ${({ theme }) => theme.colors.black80}
     }
 `;
+
+const Inputs = styled.div`
+    ${center_with_flex}
+    flex-direction: column;
+    gap: 48px;
+`;
+
+const Buttons = styled.div``;
