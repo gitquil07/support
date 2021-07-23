@@ -3,14 +3,20 @@ import styled from "styled-components";
 import { center_with_flex } from "../../styles";
 import TextInput from "../../components/Inputs/TextInput";
 import Form from "../../components/auth/Form";
+import PasswordInput from "../../components/Inputs/PasswordInput";
+import { useRef } from "react";
 
 const Login = () => {
+
+    const loginRef = useRef<HTMLInputElement>(null);
+    const passwordRef = useRef<HTMLInputElement>(null);
+
     return (
         <AuthWrapper>
             <Form>
                 <Inputs>
-                    <TextInput placeholder="Email" required={true} onChange={() => { }} value="" />
-                    <TextInput type="password" placeholder="Пароль" required={true} onChange={() => { }} value="" />
+                    <TextInput placeholder="Email" elementRef={loginRef} />
+                    <PasswordInput placeholder="Пароль" elementRef={passwordRef} />
                 </Inputs>
             </Form>
         </AuthWrapper>

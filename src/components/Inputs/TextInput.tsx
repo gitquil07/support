@@ -2,28 +2,16 @@ import styled from "styled-components";
 
 type TextInputProps = {
     placeholder: string,
-    required: boolean,
-    value: string,
-    type?: string
-
-    onChange: (event: any) => void,
+    elementRef?: any
 }
 
-const TextInput = (props: TextInputProps) => {
-    return (
-        <Input
-            type={props.type ? props.type : "text"}
-            placeholder={props.placeholder}
-            onChange={props.onChange}
-            // value={props.value}
-            required={props.required}
-        />
-    );
+const TextInput = ({ placeholder, elementRef }: TextInputProps) => {
+    return <Input placeholder={placeholder} ref={elementRef} />;
 }
 
 export default TextInput;
 
-const Input = styled.input`
+export const Input = styled.input`
     border: none;
     border-bottom: ${({ theme }) => theme.boxModels.inputBorder};
     height: 44px;
@@ -32,9 +20,10 @@ const Input = styled.input`
     font-size: 18px;
     font-family: ${({ theme }) => theme.fonts.regular};
     outline: none;
+    transition: 0.3s ease-out;
 
-    &:focus {
+    :focus {
       border-bottom: ${({ theme }) => theme.boxModels.inputBorderFocus};  
-      transition: 0.3s all linear;
+      transition: 0.3s ease-in;
     }
 `;

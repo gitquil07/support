@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { center_with_flex } from "../../styles";
-import { PrimaryButton } from "../Buttons";
+import { PlainButton, PrimaryButton } from "../Buttons";
 import Language from "./Language";
 import LogoCDC from "../../assets/images/CDC-Logo.svg";
 
@@ -20,6 +20,7 @@ const Form = ({ children }: FormProps) => {
 
                 <Buttons>
                     <PrimaryButton name="Войти" />
+                    <PlainButton name="Забыли пароль?" />
                 </Buttons>
 
             </Elements>
@@ -60,7 +61,11 @@ const Footer = styled.div`
 `;
 
 
-const Buttons = styled.div``;
+const Buttons = styled.div`
+    ${center_with_flex}
+    flex-direction: column;
+    gap: 24px;
+`;
 
 const Elements = styled.div`
     ${center_with_flex}
