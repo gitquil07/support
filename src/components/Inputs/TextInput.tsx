@@ -2,14 +2,17 @@ import styled from "styled-components";
 
 type TextInputProps = {
     placeholder: string,
-    onChange: (event: any) => void,
-    value: string,
     required: boolean,
+    value: string,
+    type?: string
+
+    onChange: (event: any) => void,
 }
 
 const TextInput = (props: TextInputProps) => {
     return (
-        <Input type="text"
+        <Input
+            type={props.type ? props.type : "text"}
             placeholder={props.placeholder}
             onChange={props.onChange}
             // value={props.value}
