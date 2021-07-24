@@ -1,8 +1,8 @@
-import AuthWrapper from "../../components/auth/Wrapper";
-import Globe from "../../assets/icons/globe.svg";
+import AuthWrapper from "components/auth/Wrapper";
+import Globe from "assets/icons/globe.svg";
 import styled from "styled-components";
-import { center_with_flex } from "../../styles";
-import LogoCDC from "../../assets/images/CDC-Logo.svg";
+import { center_with_flex } from "styles";
+import LogoCDC from "assets/images/cdc-logo.svg";
 
 type LoginProps = {
     show: Boolean,
