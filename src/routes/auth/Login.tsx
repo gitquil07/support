@@ -1,59 +1,33 @@
-import AuthWrapper from "components/auth/Wrapper";
-import Globe from "assets/icons/globe.svg";
+import AuthWrapper from "../../components/auth/Wrapper";
 import styled from "styled-components";
-import { center_with_flex } from "styles";
-import LogoCDC from "assets/images/cdc-logo.svg";
+import { center_with_flex } from "../../styles";
+import TextInput from "../../components/Inputs/TextInput";
+import Form from "../../components/auth/Form";
+import PasswordInput from "../../components/Inputs/PasswordInput";
+import { useRef } from "react";
 
-type LoginProps = {
-    show: Boolean,
-}
+const Login = () => {
 
-const Login = (props: LoginProps) => {
+    const loginRef = useRef<HTMLInputElement>(null);
+    const passwordRef = useRef<HTMLInputElement>(null);
+
     return (
         <AuthWrapper>
-            <Language>
-                <img src={Globe} alt="globe" />
-                <span> O'zbekcha </span>
-            </Language>
-
-            <Form show={true}>
-                <Logo src={LogoCDC} alt="logo" />
+            <Form>
+                <Inputs>
+                    <TextInput placeholder="Email" elementRef={loginRef} />
+                    <PasswordInput placeholder="Пароль" elementRef={passwordRef} />
+                </Inputs>
             </Form>
-
-            <Footer>
-                <span>Нет аккаунта?</span> <span>Зарегистрироваться</span>
-            </Footer>
         </AuthWrapper>
     );
 }
 
 export default Login;
 
-const Language = styled.div`
-    gap: 5px;
-    font-family: "Roboto Medium";
-    color: ${({ theme }) => theme.colors.black80};
+const Inputs = styled.div`
     ${center_with_flex}
-`;
-
-const Form = styled.div<LoginProps>`
-    width: ${({ show }) => show ? '100%' : '0'};
-`;
-
-const Logo = styled.img`
-    color: ${({ theme }) => theme.colors.primary};
-    width: 200px;
-    margin: auto;
-    display: block; 
-`;
-
-const Footer = styled.div`
-    span:first-child {
-        color: ${({ theme }) => theme.colors.black60}
-    }
-
-    span:last-child {
-        font-family: "Roboto Medium";
-        color: ${({ theme }) => theme.colors.black80}
-    }
+    flex-direction: column;
+    gap: 32px;
+    padding: 72px 0;
 `;

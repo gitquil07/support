@@ -5,13 +5,16 @@ declare module 'styled-components' {
         colors: {
             primary: string,
             black80: string,
+            black70: string,
             black60: string,
         },
         boxModels: {
-
+            inputBorder: string,
+            inputBorderFocus: string
         },
         fonts: {
-
+            medium: string,
+            regular: string
         },
         shadows: {
 
