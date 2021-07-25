@@ -2,6 +2,8 @@ import { Route, Switch } from "react-router-dom";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
 import ResetPassword from "./auth/ResetPassword";
+import Home from "./admin/Home";
+import Organizations from "./admin/Organizations";
 
 const routes = [
     {
@@ -15,6 +17,14 @@ const routes = [
     {
         path: "/register",
         component: Register
+    },
+    {
+        path: "/admin",
+        component: Home
+    },
+    {
+        path: "/admin/organizations",
+        component: Organizations
     }
 ];
 

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { center_with_flex } from "../../styles";
 import { PlainButton, PrimaryButton } from "../Buttons";
 import Language from "./Language";
-import LogoCDC from "../../assets/images/CDC-Logo.svg";
+import LogoCDC from "../../assets/images/cdc-logo.svg";
 
 type FormProps = {
     children: React.ReactNode;

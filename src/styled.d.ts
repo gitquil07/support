@@ -7,6 +7,14 @@ declare module 'styled-components' {
             black80: string,
             black70: string,
             black60: string,
+            white: string,
+            lightGray: string,
+            lightRed: string,
+            primary8: string,
+            primaryLight: string,
+            creamGray: string,
+            black: string,
+            green: string
         },
         boxModels: {
             inputBorder: string,
