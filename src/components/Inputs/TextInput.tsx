@@ -3,13 +3,16 @@ import styled from "styled-components";
 type TextInputProps = {
     placeholder: string,
     elementRef?: any
+    value?: string
 }
 
-const TextInput = ({ placeholder, elementRef }: TextInputProps) => {
+export const TextInput = ({ placeholder, elementRef }: TextInputProps) => {
     return <Input placeholder={placeholder} ref={elementRef} />;
 }
 
-export default TextInput;
+export const RegularInput = ({ value, placeholder, elementRef }: TextInputProps) => {
+    return <RInput { ...{ placeholder, value } } ref={elementRef} />
+}
 
 export const Input = styled.input`
     border: none;
@@ -26,4 +29,24 @@ export const Input = styled.input`
       border-bottom: ${({ theme }) => theme.boxModels.inputBorderFocus};  
       transition: 0.3s ease-in;
     }
+`;
+
+export const RInput = styled.input`
+    width: 100%;
+    height: 48px;
+    border-radius: 2px;
+    border: 1px solid ${({ theme }) => theme.colors.gray4};
+    padding-left: 16px; 
+
+    :focus{
+        outline: none;
+    }
+
+    ::placeholder{
+        font-size: 15px;
+        color: ${({ theme }) => theme.colors.black40};
+        font-family: ${({ theme }) => theme.fonts.regular};
+        letter-spacing: .2px;
+    }
+
 `;

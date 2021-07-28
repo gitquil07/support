@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import Operator from "../../assets/images/operator-background.png";
 import { center_with_flex } from "../../styles";

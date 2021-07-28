@@ -2,8 +2,12 @@ import { Route, Switch } from "react-router-dom";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
 import ResetPassword from "./auth/ResetPassword";
-import Home from "./admin/Home";
-import Organizations from "./admin/Organizations";
+import { Main } from "components/General/Main";
+import { SideBar } from "components/General/SideBar";
+import { NavBar } from "components/General/NavBar";
+import AdminRoutes from "./admin";
+
+
 
 const routes = [
     {
@@ -20,21 +24,23 @@ const routes = [
     },
     {
         path: "/admin",
-        component: Home
+        component: AdminRoutes
     },
-    {
-        path: "/admin/organizations",
-        component: Organizations
-    }
 ];
 
 const Routes = () => {
     return (
-        <Switch>
-            {routes.map(route => (
-                <Route key={route.path} path={route.path} component={route.component} />
-            ))}
-        </Switch>
+        <>
+            <NavBar />
+            <SideBar />
+            <Main>
+                <Switch>
+                    {routes.map(route => (
+                        <Route key={route.path} path={route.path} component={route.component} />
+                    ))}
+                </Switch>
+            </Main>
+        </>
     )
 }
 

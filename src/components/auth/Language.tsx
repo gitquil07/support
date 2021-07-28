@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import Globe from "../../assets/icons/globe.svg"
 import { center_with_flex } from "../../styles";

@@ -42,8 +42,11 @@ export const NavBar = () => {
 }
 
 const Header = styled.header`
-    height:120px;
+    height: 120px;
+    width: 100%;
     background-color: ${({theme}) => theme.colors.primary};
+    position: fixed;
+    z-index: 2;
     ${center_with_flex}
 `;
 

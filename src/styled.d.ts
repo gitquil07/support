@@ -14,7 +14,24 @@ declare module 'styled-components' {
             primaryLight: string,
             creamGray: string,
             black: string,
-            green: string
+            green: string,
+            black2: string,
+            greenerGray: string,
+            cardGray: string,
+            greenNatural: string,
+            black20: string,
+            gray1: string,
+            gray2: string,
+            gray3: string,
+            gray4: string,
+            gray5: string,
+            bgColor: string,
+            black40: string,
+            primary7: string,
+            blueGrTop: string,
+            blueGrBottom: string,
+            secondary: string,
+            thirtrary3: string
         },
         boxModels: {
             inputBorder: string,
@@ -22,7 +39,10 @@ declare module 'styled-components' {
         },
         fonts: {
             medium: string,
-            regular: string
+            regular: string,
+            visbyMedium: string,
+            visbyBold: string,
+            visbyHeavy: string
         },
         shadows: {
 

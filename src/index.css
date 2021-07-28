@@ -6,6 +6,20 @@
 
 body {
   font-family: "Roboto Regular";
+  background-color: #FCFCFC;
+}
+
+body::-webkit-scrollbar{
+  width: 5px;
+}
+
+body::-webkit-scrollbar-thumb{
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, .2);
+} 
+
+body::-webkit-scrollbar-track{
+  background: transparent;
 }
 
 @font-face {
@@ -21,4 +35,19 @@ body {
 @font-face {
   font-family: "Roboto Medium";
   src: url("./assets/fonts/Roboto-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Visby";
+  src: url("./assets/fonts/VisbyCF-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Visby Bold";
+  src: url("./assets/fonts/VisbyCF-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Visby Heavy";
+  src: url("./assets/fonts/VisbyCF-Heavy.ttf");
 }

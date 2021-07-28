@@ -1,18 +1,17 @@
-import { NavBar } from "components/General/NavBar";
-import { Main } from "components/General/Main";
-import { SideBar } from "components/General/SideBar";
+import HomeBg from "assets/images/home-bg.svg";
+import styled from "styled-components";
 
 const Home = () => {
 
     return (
-        <>
-            <NavBar />
-            <Main>
-                <SideBar />
-            </Main>
-        </>
+        <CenteredImg src={HomeBg} alt="programmer" />
     );
 
 }
+
+const CenteredImg = styled.img`
+    display: block;
+    margin: 0 auto;
+`;
 
 export default Home;

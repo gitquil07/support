@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Main = styled.main`
-    display: grid;
-    grid-template-columns: 530px 1fr;
+    padding: 188px 80px 30px 80px;
+    box-sizing: border-box;
+    margin-left: 27.60%;
+    /* background-color: ${({ theme }) => theme.colors.bgColor}; */
 `;
