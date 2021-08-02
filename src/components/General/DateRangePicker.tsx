@@ -4,7 +4,11 @@ import CalendarGreen from "assets/icons/calendarGreen.svg";
 import moment from "moment";
 import { SaveButton } from "components/Buttons";
 
-export const DateRangePicker = () => {
+/*
+    DateRangePicker component
+*/ 
+
+export default () => {
 
     const [isOpen, setIsOpen] = useState<boolean>(false);
     

@@ -4,11 +4,16 @@ import { center_with_flex, customScrollBar } from "styles";
 import { Link } from "react-router-dom";
 import { sideBarLinks } from "./data";
 
-type TItem = {
+type TItemProps = {
     active: number | undefined
 }
 
-export const SideBar = () => {
+/*
+    SideBar
+*/ 
+
+export default  () => {
+    
     const [currentLocation, setCurrentLocation] = useState<string>(window.location.pathname);
 
     const isActive = (path: string) : number => {
@@ -70,7 +75,7 @@ const MenuItem = styled.li`
     justify-content: flex-start;
 `;
 
-const MenuIcon = styled.span<TItem>`
+const MenuIcon = styled.span<TItemProps>`
     margin-right: 16px;
 
     svg path{
@@ -78,7 +83,7 @@ const MenuIcon = styled.span<TItem>`
     }
 `;
 
-const MenuLink = styled(Link)<TItem>`
+const MenuLink = styled(Link)<TItemProps>`
     color: ${({ active, theme }) => active? theme.colors.green : theme.colors.black};
     text-decoration: none;
     font-size: 18px;

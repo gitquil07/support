@@ -5,13 +5,18 @@ import { customScrollBar } from "styles";
 import { center_with_flex } from "styles";
 import { useHistory } from "react-router-dom";
 
-type TCrudTable = {
+type TCrudTableProps = {
     columns: any,
     data: any,
-    url: string
+    url: string,
+    editOnly?: boolean
 }
 
-export const CrudTable = ({ columns, data, url }: TCrudTable) => {
+/*
+    CrudTable component
+*/ 
+
+export default ({ columns, data, url, editOnly }: TCrudTableProps) => {
 
     const history = useHistory();
 
@@ -55,7 +60,9 @@ export const CrudTable = ({ columns, data, url }: TCrudTable) => {
                                     {
                                         (isOpen && item.id === selectedEntryId)? <ConfirmDeleteButton name="Подтвердите удаление" onClick={() => {}} /> : <EditButtonCrud onClick={() => editEntry(item.id)}/>
                                     }
-                                    <RemoveButtonCrud onClick={() => toggle(item.id)} />
+                                    {
+                                        !editOnly? <RemoveButtonCrud onClick={() => toggle(item.id)} /> : null
+                                    }
                                 </span>
 
                             }

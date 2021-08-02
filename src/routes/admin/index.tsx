@@ -10,17 +10,23 @@ import SystemsEdit from "./Systems/Edit";
 
 import Applications from "./Applications";
 
-type TMatch = {
-    url: string,
-    path: string,
-    params: object
-}
+import Tariffs from "./Tariffs";
+import TariffsCreate from "./Tariffs/Create";
+import TariffsEdit from "./Tariffs/Edit";
 
-type TAdminRoutes = {
+
+type TAdminRoutesProps = {
     match: TMatch
 }
 
-const AdminRoutes = ({ match }: TAdminRoutes): JSX.Element => {
+type TMatch = {
+    url: string,
+    path: string,
+    params: any
+}
+
+
+const AdminRoutes = ({ match }: TAdminRoutesProps): JSX.Element => {
 
     const url: string = match.url;
 
@@ -37,6 +43,10 @@ const AdminRoutes = ({ match }: TAdminRoutes): JSX.Element => {
             <Route path={getUrl("/systems")} component={Systems} exact />
             <Route path={getUrl("/systems/create")} component={SystemsEdit} />
             <Route path={getUrl("/systems/edit/:id")} component={SystemsEdit} />
+
+            <Route path={getUrl("/tariffs")} component={Tariffs} exact />
+            <Route path={getUrl("/tariffs/create")} component={TariffsCreate} />
+            <Route path={getUrl("/tariffs/edit/:id")} component={TariffsEdit}></Route>
         </>
     );
 

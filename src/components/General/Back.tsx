@@ -1,18 +1,25 @@
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import ArrowBack from "assets/icons/arrowBack.svg";
-import { resetBorders } from "components/Buttons";
+import { commonButtonStyles } from "styles";
 import { center_with_flex } from "styles";
 
-type TProps = {
+type TGoBackProps = {
     text: string
 }
 
-export const GoBack = ({ text }: TProps) => {
+/*
+    GoBack component
+*/
+
+export default ({ text }: TGoBackProps) => {
 
     const history = useHistory();
 
-    const handleClick = (): void => history.goBack();
+    const handleClick = (e: React.SyntheticEvent): void => {
+        history.goBack()
+        e.preventDefault();
+    };
 
     return (
         <BackComponent>
@@ -29,7 +36,7 @@ const BackComponent = styled.div`
     justify-content: flex-start;
     
     button{
-        ${ resetBorders };
+        ${ commonButtonStyles };
         width: 24px;
         height: 24px;
         margin-right: 12px;

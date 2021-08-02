@@ -7,7 +7,11 @@ import CdCLogoWhite from "assets/images/cdc-logo-white.svg";
 import UserIcon from "assets/icons/user.svg";
 
 
-export const NavBar = () => {
+/*
+    NavBar component
+*/ 
+
+export default () => {
 
     const [isOpen, setIsOpen] = useState<boolean>(false);
 

@@ -1,18 +1,7 @@
 import { OrganizationForm } from "components/Forms/OrganizationForm";
-import { PageHeader } from "components/General/PageHeader";
-import { GoBack } from "components/General/Back";
+import { PageHeader } from "components/General";
+import { GoBack } from "components/General";
 import { BottomOffset } from "components/General/Wrappers";
-
-type TProps = {
-    match: TMatch
-};
-
-type TMatch = {
-    isExact: boolean,
-    params: any,
-    url: string,
-    path: string
-};
 
 const data = [
     {
@@ -288,7 +277,19 @@ const data = [
     
 ];
 
-const Edit = ({ match }: TProps) => {
+
+type TOrganizationEditProps = {
+    match: TMatch
+};
+
+type TMatch = {
+    isExact: boolean,
+    params: any,
+    url: string,
+    path: string
+};
+
+const OrganizationEdit = ({ match }: TOrganizationEditProps) => {
 
     const queryId: number = match.params.id;
 
@@ -306,4 +307,4 @@ const Edit = ({ match }: TProps) => {
 
 }
 
-export default Edit
+export default OrganizationEdit

@@ -3,12 +3,12 @@ import styled from "styled-components";
 import Eye from "../../assets/icons/eye.svg";
 import { Input } from "./TextInput";
 
-type PasswordInputProps = {
+type TPasswordInputProps = {
     placeholder: string,
     elementRef?: any
 }
 
-const PasswordInput = ({ placeholder, elementRef, }: PasswordInputProps) => {
+const PasswordInput = ({ placeholder, elementRef }: TPasswordInputProps) => {
     const [show, setShow] = useState(false);
 
     return (

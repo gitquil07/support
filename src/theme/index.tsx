@@ -36,7 +36,8 @@ const Theme = ({ children }: ThemeProps) => {
             blueGrTop: "#1B93B3",
             blueGrBottom: "#12B1DB",
             secondary: "#FF5959",
-            thirtrary3: "#36BADC"
+            thirtrary3: "#36BADC",
+            lightBg2: "#F0F5FA"
         },
         boxModels: {
             inputBorder: "1px solid #E0E0E0;",

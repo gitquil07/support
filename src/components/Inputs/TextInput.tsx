@@ -3,16 +3,20 @@ import styled from "styled-components";
 type TextInputProps = {
     placeholder: string,
     elementRef?: any
-    value?: string
+    value?: string,
 }
 
 export const TextInput = ({ placeholder, elementRef }: TextInputProps) => {
     return <Input placeholder={placeholder} ref={elementRef} />;
 }
 
-export const RegularInput = ({ value, placeholder, elementRef }: TextInputProps) => {
-    return <RInput { ...{ placeholder, value } } ref={elementRef} />
+
+type RegularInputProps = TextInputProps & { defaultValue: string };
+
+export const RegularInput = ({ value, defaultValue, placeholder, elementRef }: RegularInputProps) => {
+    return <RInput { ...{ defaultValue, placeholder, value } } ref={elementRef} />
 }
+
 
 export const Input = styled.input`
     border: none;

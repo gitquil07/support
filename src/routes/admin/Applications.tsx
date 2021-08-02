@@ -1,8 +1,8 @@
-import { DateRangePicker } from "components/General/DateRangePicker";
-import { PageHeader } from "components/General/PageHeader";
+import { DateRangePicker } from "components/General";
+import { PageHeader } from "components/General";
 import { GridWrapper } from "components/General/Wrappers";
 import { LongGrayButton } from "components/Buttons";
-import { Search } from "components/General/Search";
+import { Search } from "components/General";
 import styled from "styled-components";
 import moment from "moment";
 import { formatTime } from "utils/functions";
@@ -139,7 +139,7 @@ const Applications = (): JSX.Element => {
                 <Search />
                 <DateRangePicker />
             </PageHeader>
-            <GridWrapper repetitiomAmount="3" size="1fr" rowGap="40" colGap="40">
+            <GridWrapper repetitionAmount="3" size="1fr" rowGap="40" colGap="40">
                 {
                     applicationList.map((application) => 
                         <CardWithShadow key={application.id}>
@@ -172,7 +172,7 @@ const Applications = (): JSX.Element => {
 }
 
 
-type TCardDetails = {
+type TCardDetailsProps = {
     itemOffset?: string,
     isOffsetTop?: boolean
 };
@@ -210,10 +210,10 @@ const Badge = styled.span`
     font-size: 12px;
     color: ${({ theme }) => theme.colors.white};
     border-radius: 20px;
-    background-color: ${({ theme }) => theme.colors.greenNatural}
+    background-color: ${({ theme }) => theme.colors.greenNatural};
 `;
 
-const CardDetails = styled.div<TCardDetails>`
+const CardDetails = styled.div<TCardDetailsProps>`
     margin-top: 8px;
     span {
         margin-right: 10px;

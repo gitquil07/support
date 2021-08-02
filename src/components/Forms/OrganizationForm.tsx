@@ -1,10 +1,10 @@
 import { InputGroup, InlineGroup } from "components/General/Wrappers";
-import { RegularInput } from "components/Inputs/TextInput";
+import { RegularInput } from "components/Inputs";
 import { OptionsInput } from "components/Inputs/Options";
-import { CustomSelect } from "components/Inputs/CustomSelect";
-import { FormAddBtn, FormCloseBtn } from "components/Buttons";
+import { CustomSelect } from "components/Inputs";
+import { FormAddButton, FormCloseButton } from "components/Buttons";
 import { Form } from "components/General/Form";
-import { useRef } from "react";
+import React from "react";
 
 const options = [
     {
@@ -40,47 +40,43 @@ const selectOptions = [
     }
 ];
 
-type TProps = {
+type TOrganizationFormProps = {
     entry: TEntry | null
 }
 
 type TEntry = {
     id: number,
     organizationName: string
-    system: Option[]
+    system: TOption[]
     rate: string
 }
 
-type Option = {
+type TOption = {
     value: string
     label: string
 }
 
-export const OrganizationForm = ({ entry }: TProps) => {
-
-    const organizationNameV = useRef<HTMLInputElement>(null),
-            systemV = useRef<HTMLSelectElement>(null),
-            rateV = useRef<HTMLSelectElement>(null);
+export const OrganizationForm = ({ entry }: TOrganizationFormProps) => {
     
-    const handleSubmit = (): void => {
-        console.log("organizationNameV", organizationNameV.current?.value);
-        console.log("systemV", systemV.current?.selectedOptions[0].value);
-        console.log("rateV", rateV.current?.selectedIndex);
+    const handleSubmit = (e: React.SyntheticEvent): void => {
+
+        e.preventDefault();
+
     }
 
     return (
-        <Form>
+        <Form onSubmit={(e) => handleSubmit(e)} fullWidth>
             <InputGroup>
-                <RegularInput value={entry?.organizationName} placeholder="Напишите название организации" elementRef={organizationNameV} />
-                <OptionsInput placeholder="Добавить систему" elementRef={systemV} { ...{ options } } />
-                <CustomSelect placeholder="Тариф" elementRef={rateV}>
+                <RegularInput name="organizationName" value={entry?.organizationName ?? ""} placeholder="Напишите название организации" />
+                <OptionsInput placeholder="Добавить систему" { ...{ options } } />
+                <CustomSelect placeholder="Тариф" name="tariff">
                     {
                         selectOptions.map(({ value, label }) => <option {...{value}} selected={value == entry?.rate}>{label}</option>)
                     }
                 </CustomSelect>
                 <InlineGroup>
-                    <FormAddBtn name="Добавить" onClick={() => handleSubmit()}/>
-                    <FormCloseBtn name="Отменить" />
+                    <FormAddButton name="Добавить" />
+                    <FormCloseButton name="Отменить" />
                 </InlineGroup>
             </InputGroup>
         </Form>

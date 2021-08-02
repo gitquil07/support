@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { PageHeader } from "components/General/PageHeader";
+import { PageHeader } from "components/General";
 import { AddButton } from "components/Buttons"; 
-import { CrudTable } from "components/General/CrudTable";
+import { CrudTable } from "components/General";
 import { OrganizationForm } from "components/Forms/OrganizationForm";
 
 const columns = [
@@ -122,7 +122,7 @@ const data = [
     
 ]
 
-type TProps = {
+type TOrganizationsProps = {
     match: TMatch    
 }
 
@@ -133,7 +133,7 @@ type TMatch = {
     url: string
 }
 
-const Organizations = ({ match }: TProps) => {
+const Organizations = ({ match }: TOrganizationsProps) => {
 
     const url: string = match.url;
 

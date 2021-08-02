@@ -31,7 +31,8 @@ declare module 'styled-components' {
             blueGrTop: string,
             blueGrBottom: string,
             secondary: string,
-            thirtrary3: string
+            thirtrary3: string,
+            lightBg2: string
         },
         boxModels: {
             inputBorder: string,

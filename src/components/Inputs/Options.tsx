@@ -1,26 +1,27 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { customScrollBar, center_with_flex } from "styles";
 import { InputGroup } from "../General/Wrappers";
 import { RemoveButtonCrud } from "components/Buttons";
 import styled from "styled-components";
 
-type TOptions = {
-    options: Option[],
+type TOptionsInputProps = {
+    options: TOption[],
     placeholder: string,
-    elementRef?: any 
 }
 
-type Option = {
+type TOption = {
     value: string,
     label: string
 }
 
-type TIntrisicOption = Option & {id: number, selected: boolean};
+type TIntrisicOption = TOption & {id: number, selected: boolean};
 
-export const OptionsInput = ({ options, placeholder, elementRef }: TOptions) => {
+export const OptionsInput = ({ options, placeholder }: TOptionsInputProps) => {
+
+    const selectOptionRef = useRef<HTMLSelectElement>(null);
 
     const mutateOptions = (): TIntrisicOption[] => {
-        return options.map((option: Option, idx: number) => {
+        return options.map((option: TOption, idx: number) => {
             return {...option, id: idx, selected: false};
         });
     }
@@ -45,7 +46,7 @@ export const OptionsInput = ({ options, placeholder, elementRef }: TOptions) => 
 
     return(
         <InputGroup offset="0">
-            <HiddenSelect ref={elementRef} multiple>
+            <HiddenSelect ref={selectOptionRef} multiple>
                 {
                     systems.map(({value, label, id, selected}) => <option key={id} value={value} { ...{ selected } }>{label}</option>)
                 }

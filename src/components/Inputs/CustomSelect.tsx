@@ -1,16 +1,23 @@
 import styled from "styled-components";
+import { useRef } from "react";
 
-type TCustomSelect = {
+type TCustomSelectProps = {
     placeholder: string
-    elementRef: any
     children: React.ReactNode
+    fullWidth?: boolean
+    name: string
 }
 
+/*
+    CustomSelect
+*/
 
-export const CustomSelect = ({ placeholder, elementRef, children }: TCustomSelect) => {
+export default ({ name, placeholder, children, fullWidth }: TCustomSelectProps) => {
+
+    const selectRef = useRef<HTMLSelectElement>(null);
 
     return (
-        <CustomizedSelect ref={elementRef}>
+        <CustomizedSelect ref={selectRef} {...{ fullWidth }} { ...{ name } }>
             <option value="" selected>{placeholder}</option>
             {children}
         </CustomizedSelect>
@@ -19,8 +26,12 @@ export const CustomSelect = ({ placeholder, elementRef, children }: TCustomSelec
 }
 
 
-const CustomizedSelect = styled.select`
-    width: 313px;
+type TSCustomSelectProps = {
+    fullWidth?: boolean
+}
+
+const CustomizedSelect = styled.select<TSCustomSelectProps>`
+    width: ${({ fullWidth }) => !fullWidth? "313px" : "100%"};
     height: 48px;
     border: 1px solid ${({ theme }) => theme.colors.gray4};
     cursor: pointer;

@@ -30,3 +30,14 @@ export const customScrollBar = css`
         background: transparent;
     }
 `;
+
+export const commonButtonStyles = css`
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 2px;
+
+    :focus{
+        outline: none;
+    }
+`;

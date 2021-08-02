@@ -1,17 +1,22 @@
 import styled from "styled-components";
 import { center_with_flex } from "styles";
 
-type TPageHeader = {
+type TPageHeaderProps = {
     title: string,
     children?: React.ReactNode,
     alignment: string
 }
 
-type THeaderContainer = {
+type THeaderContainerProps = {
     alignment: string
 }
 
-export const PageHeader = ({ title, children, alignment }: TPageHeader): JSX.Element => {
+/*
+    PageHeader
+*/ 
+
+
+export default ({ title, children, alignment }: TPageHeaderProps): JSX.Element => {
 
     return (
         <PHeaderContainer { ...{ alignment } }>
@@ -22,7 +27,7 @@ export const PageHeader = ({ title, children, alignment }: TPageHeader): JSX.Ele
 
 } 
 
-const PHeaderContainer = styled.div<THeaderContainer>`
+const PHeaderContainer = styled.div<THeaderContainerProps>`
     width: 100%;
     ${ center_with_flex };
     justify-content: ${({ alignment }) => alignment};

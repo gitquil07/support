@@ -3,7 +3,11 @@ import styled from "styled-components";
 import Magnifier from "assets/icons/magnifier.svg";
 import { center_with_flex } from "styles";
 
-export const Search = (): JSX.Element => {
+/*
+    Search component
+*/ 
+
+export default () => {
 
     const search = useRef<HTMLInputElement | null>(null);
 
