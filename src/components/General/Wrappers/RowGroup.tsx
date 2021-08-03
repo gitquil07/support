@@ -5,7 +5,7 @@ type TInputProps = {
     offset?: string
 }
 
-export const InputGroup = styled.div<TInputProps>`
+export const RowGroup = styled.div<TInputProps>`
     display: grid;
     margin: ${({ offset }) => offset? `${offset}px` : "40px"} 0;
     grid-row-gap: ${({ gap }) => gap? `${gap}px` : "24px"};

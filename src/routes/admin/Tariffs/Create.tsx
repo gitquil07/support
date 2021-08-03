@@ -2,7 +2,7 @@ import { PageHeader } from "components/General";
 import { GoBack } from "components/General";
 import { BottomOffset } from "components/General/Wrappers";
 import { Form } from "components/General/Form";
-import { InputGroup } from "components/General/Wrappers";
+import { RowGroup } from "components/General/Wrappers";
 import { RegularInput, CustomSelect } from "components/Inputs";
 import { InlineGroup, InputLabel } from "components/General/Wrappers";
 import { FormAddButton, FormCloseButton } from "components/Buttons";
@@ -41,11 +41,11 @@ const TariffEdit = ({ match }: TTariffCreateProps) => {
             <BottomOffset>
                 <GoBack text="Назад" />
             </BottomOffset>
-            <InputGroup>
+            <RowGroup>
                 <PageHeader title="Добавить тариф" alignment="flex-start" />
                 <Form name="form" onSubmit={handleSubmit}>
                     <BlueWrapper>
-                        <InputGroup>
+                        <RowGroup>
                             <InputLabel>
                                 <label>Название тарифа</label>
                                 <RegularInput name="tariff" placeholder="" value="" />
@@ -69,10 +69,10 @@ const TariffEdit = ({ match }: TTariffCreateProps) => {
                                 <FormAddButton name={queryId? "Сохранить изменения" : "Добавить"} />
                                 <FormCloseButton name="Отменить" />
                             </InlineGroup>
-                        </InputGroup>
+                        </RowGroup>
                     </BlueWrapper>
                 </Form>
-            </InputGroup>
+            </RowGroup>
         </>
     );
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { InputGroup } from "components/General/Wrappers";
+import { RowGroup } from "components/General/Wrappers";
 import { RegularInputWithRm } from "components/Inputs";
 import { InputGroupHeader } from "components/General/Wrappers";
 import { AddInputButton } from "components/Buttons";
@@ -30,7 +30,7 @@ export default ({ title }: TDynamicInputProps) => {
 
 
     return (
-        <InputGroup offset="0">
+        <RowGroup offset="0">
             <InputGroupHeader  { ...{ title } }>
                 <AddInputButton name="Добавить" onClick={(e: React.MouseEvent<HTMLButtonElement>) => addInput(e)}/>
             </InputGroupHeader>
@@ -39,7 +39,7 @@ export default ({ title }: TDynamicInputProps) => {
                     <RegularInputWithRm name="systems" key={Math.random()} {...{ value } } placeholder="Направление" onClick={(e: React.MouseEvent<HTMLButtonElement>) => removeInput(e, idx)} blur={(e: React.FocusEvent<HTMLInputElement>) => handleDirectionInputBlur(e, idx)} />
                 )
             }
-        </InputGroup>
+        </RowGroup>
     );
 
 };

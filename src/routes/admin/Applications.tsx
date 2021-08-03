@@ -131,7 +131,7 @@ const applicationList = [
 ];
 
 
-const Applications = (): JSX.Element => {
+const Applications = () => {
 
     return (
         <>

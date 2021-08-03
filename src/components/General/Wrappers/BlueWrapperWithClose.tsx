@@ -11,7 +11,7 @@ type TBlueWrapperWithCloseProp = {
     BlueWrapperWithClose
 */
 
-export default ({ onClick, children }: TBlueWrapperWithCloseProp): JSX.Element => {
+export default ({ onClick, children }: TBlueWrapperWithCloseProp) => {
 
     return (
         <>

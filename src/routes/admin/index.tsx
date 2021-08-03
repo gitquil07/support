@@ -14,6 +14,11 @@ import Tariffs from "./Tariffs";
 import TariffsCreate from "./Tariffs/Create";
 import TariffsEdit from "./Tariffs/Edit";
 
+import Feedbacks from "./Feedbacks";
+
+import Themes from "./Themes";
+import Edit from "./Themes/Edit";
+
 
 type TAdminRoutesProps = {
     match: TMatch
@@ -26,7 +31,7 @@ type TMatch = {
 }
 
 
-const AdminRoutes = ({ match }: TAdminRoutesProps): JSX.Element => {
+const AdminRoutes = ({ match }: TAdminRoutesProps) => {
 
     const url: string = match.url;
 
@@ -46,7 +51,12 @@ const AdminRoutes = ({ match }: TAdminRoutesProps): JSX.Element => {
 
             <Route path={getUrl("/tariffs")} component={Tariffs} exact />
             <Route path={getUrl("/tariffs/create")} component={TariffsCreate} />
-            <Route path={getUrl("/tariffs/edit/:id")} component={TariffsEdit}></Route>
+            <Route path={getUrl("/tariffs/edit/:id")} component={TariffsEdit} />
+
+            <Route path={getUrl("/feedbacks")} component={Feedbacks} exact/>
+
+            <Route path={getUrl("/themes")} component={Themes} exact />
+            <Route path={getUrl("/themes/create")} component={Edit} />
         </>
     );
 

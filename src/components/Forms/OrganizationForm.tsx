@@ -1,4 +1,4 @@
-import { InputGroup, InlineGroup } from "components/General/Wrappers";
+import { RowGroup, InlineGroup } from "components/General/Wrappers";
 import { RegularInput } from "components/Inputs";
 import { OptionsInput } from "components/Inputs/Options";
 import { CustomSelect } from "components/Inputs";
@@ -66,7 +66,7 @@ export const OrganizationForm = ({ entry }: TOrganizationFormProps) => {
 
     return (
         <Form onSubmit={(e) => handleSubmit(e)} fullWidth>
-            <InputGroup>
+            <RowGroup>
                 <RegularInput name="organizationName" value={entry?.organizationName ?? ""} placeholder="Напишите название организации" />
                 <OptionsInput placeholder="Добавить систему" { ...{ options } } />
                 <CustomSelect placeholder="Тариф" name="tariff">
@@ -78,7 +78,7 @@ export const OrganizationForm = ({ entry }: TOrganizationFormProps) => {
                     <FormAddButton name="Добавить" />
                     <FormCloseButton name="Отменить" />
                 </InlineGroup>
-            </InputGroup>
+            </RowGroup>
         </Form>
     )
 }

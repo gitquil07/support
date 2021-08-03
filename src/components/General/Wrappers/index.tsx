@@ -1,5 +1,5 @@
 export { GridWrapper } from "./GridWrapper"
-export { InputGroup } from "./InputGroup";
+export { RowGroup } from "./RowGroup";
 export { InlineGroup } from "./InlineGroup";
 export { BottomOffset } from "./BottomOffset";
 export { BlueWrapper } from "./BlueWrapper"; 

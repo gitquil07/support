@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { customScrollBar, center_with_flex } from "styles";
-import { InputGroup } from "../General/Wrappers";
+import { RowGroup } from "../General/Wrappers";
 import { RemoveButtonCrud } from "components/Buttons";
 import styled from "styled-components";
 
@@ -45,7 +45,7 @@ export const OptionsInput = ({ options, placeholder }: TOptionsInputProps) => {
           notSelected: TIntrisicOption[] = systems.filter(opt => !opt.selected);
 
     return(
-        <InputGroup offset="0">
+        <RowGroup offset="0">
             <HiddenSelect ref={selectOptionRef} multiple>
                 {
                     systems.map(({value, label, id, selected}) => <option key={id} value={value} { ...{ selected } }>{label}</option>)
@@ -62,7 +62,7 @@ export const OptionsInput = ({ options, placeholder }: TOptionsInputProps) => {
                     notSelected.map(({id, label}) => <Option key={id} onClick={() => changeSelection(id)}>{label}</Option>)
                 }
             </OptionsList>           
-        </InputGroup>
+        </RowGroup>
     );
 
 }

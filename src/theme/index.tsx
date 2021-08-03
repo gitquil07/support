@@ -37,7 +37,8 @@ const Theme = ({ children }: ThemeProps) => {
             blueGrBottom: "#12B1DB",
             secondary: "#FF5959",
             thirtrary3: "#36BADC",
-            lightBg2: "#F0F5FA"
+            lightBg2: "#F0F5FA",
+            black50: "#919191"
         },
         boxModels: {
             inputBorder: "1px solid #E0E0E0;",

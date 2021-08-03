@@ -2,7 +2,7 @@ import { PageHeader } from "components/General";
 import { GoBack } from "components/General";
 import { BottomOffset } from "components/General/Wrappers";
 import { Form } from "components/General/Form";
-import { InputGroup } from "components/General/Wrappers";
+import { RowGroup } from "components/General/Wrappers";
 import { RegularInput } from "components/Inputs";
 import { DynamicInputs } from "components/Inputs";
 import { InputGroupHeader } from "components/General/Wrappers";
@@ -176,7 +176,7 @@ const SystemEdit = ({ match }: TSystemEditProps) => {
             </BottomOffset>
             <PageHeader title="Добавление новой системы" alignment="flex-start" />
             <Form name="form" onSubmit={(e) => handleSubmit(e)}>
-                <InputGroup>
+                <RowGroup>
                     <RegularInput name="system" value={entry?.name ?? ""} placeholder="Система" />
                     <DynamicInputs title="Направления" />
                     <InputGroupHeader title="Цена обслуги за час (USD)" />
@@ -185,7 +185,7 @@ const SystemEdit = ({ match }: TSystemEditProps) => {
                         <FormAddButton name={queryId? "Сохранить изменения" : "Сохранить"} />
                         <FormCloseButton name="Отменить" />
                     </InlineGroup>
-                </InputGroup>
+                </RowGroup>
             </Form>
         </>
     );

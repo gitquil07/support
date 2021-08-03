@@ -2,7 +2,7 @@ import { PageHeader } from "components/General";
 import { GoBack } from "components/General";
 import { CustomSelect } from "components/Inputs";
 import { GridWrapper, BlueWrapper, BlueWrapperWithClose, BottomOffset } from "components/General/Wrappers";
-import { InputGroup, InlineGroup, InputLabel } from "components/General/Wrappers";
+import { RowGroup, InlineGroup, InputLabel } from "components/General/Wrappers";
 import { Form } from "components/General/Form";
 import { RegularInput } from "components/Inputs";
 import { FormAddButton, FormCloseButton } from "components/Buttons";
@@ -51,9 +51,9 @@ const Edit = ({ match }: TTariffEditProps) => {
                 <GoBack text="Назад" />
             </BottomOffset>
             <PageHeader title="Тарифы SAP" alignment="flex-start" />
-            <InputGroup offset="0">
+            <RowGroup offset="0">
                 <Form onSubmit={(e) => handleSubmit(e)}>
-                    <InputGroup>
+                    <RowGroup>
                         <InlineGroup>
                             <FixedWidthText>
                                 Активный план
@@ -64,18 +64,18 @@ const Edit = ({ match }: TTariffEditProps) => {
                         </InlineGroup>
                         <GridWrapper repetitionAmount="3" size="1fr" colGap="32" rowGap="32" offset="8">
                             <BlueWrapper width="345">
-                                <InputGroup offset="0">
+                                <RowGroup offset="0">
                                     <CardName>Часовой тариф</CardName>
                                     <InputLabel>
                                         <label>Цена за час (USD)</label>
                                         <RegularInput name="" placeholder="" value="" />
                                     </InputLabel>
-                                </InputGroup>
+                                </RowGroup>
                             </BlueWrapper>
                             {
                                 tariffs.map(({tariffName, limit, price}, idx) =>
                                     <BlueWrapperWithClose onClick={(e: React.MouseEvent<HTMLButtonElement>) => removeTariff(e, idx)}>
-                                        <InputGroup offset="0">
+                                        <RowGroup offset="0">
                                             <InputLabel>
                                                 <label>Название тарифа</label>
                                                 <RegularInput name="tariffName" placeholder="" value={tariffName} blur={(e: React.FocusEvent<HTMLInputElement>) => handleTariffInputBlur(e, idx)} />
@@ -88,7 +88,7 @@ const Edit = ({ match }: TTariffEditProps) => {
                                                 <label>Цена (USD)</label>
                                                 <RegularInput name="price" placeholder="" value={price} blur={(e: React.FocusEvent<HTMLInputElement>) => handleTariffInputBlur(e, idx)}/>
                                             </InputLabel>
-                                        </InputGroup>
+                                        </RowGroup>
                                     </BlueWrapperWithClose>
                                 )
                             }
@@ -97,9 +97,9 @@ const Edit = ({ match }: TTariffEditProps) => {
                             <FormAddButton name="Изменить сохранения" />
                             <FormCloseButton name="Отменить" /> 
                         </InlineGroup>
-                    </InputGroup>
+                    </RowGroup>
                 </Form>
-            </InputGroup>
+            </RowGroup>
         </>
     );
 

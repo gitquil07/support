@@ -16,7 +16,7 @@ type THeaderContainerProps = {
 */ 
 
 
-export default ({ title, children, alignment }: TPageHeaderProps): JSX.Element => {
+export default ({ title, children, alignment }: TPageHeaderProps) => {
 
     return (
         <PHeaderContainer { ...{ alignment } }>
