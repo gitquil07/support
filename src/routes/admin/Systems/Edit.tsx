@@ -1,3 +1,4 @@
+import React from "react";
 import { PageHeader } from "components/General";
 import { GoBack } from "components/General";
 import { BottomOffset } from "components/General/Wrappers";
@@ -8,7 +9,7 @@ import { DynamicInputs } from "components/Inputs";
 import { InputGroupHeader } from "components/General/Wrappers";
 import { InlineGroup } from "components/General/Wrappers";
 import { FormAddButton, FormCloseButton } from "components/Buttons";
-import React from "react";
+import { TMatch as TSystemEditProps } from "types";
 
 const data = [
     {
@@ -140,19 +141,7 @@ const data = [
     
 ]
 
-
-type TSystemEditProps = {
-    match: TMatch
-}
-
-type TMatch = {
-    isExact: boolean,
-    params: any,
-    url: string,
-    path: string
-}
-
-const SystemEdit = ({ match }: TSystemEditProps) => {
+const SystemEdit = ({ match }: TSystemEditProps<any>) => {
 
     const queryId: number = match.params.id;
 

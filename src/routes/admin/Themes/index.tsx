@@ -5,6 +5,7 @@ import { AddButton } from "components/Buttons";
 import { CrudTable } from "components/General";
 import { useHistory } from "react-router-dom";
 import { GridWrapper } from "components/General/Wrappers";
+import { TMatch as TThemesProps } from "types";
 
 const systems = [
     {
@@ -26,37 +27,30 @@ const columns = [
 
 const data = [
     {
+        id: 0,
         feedback: "Feedback"
     },
     {
+        id: 1,
         feedback: "Feedback"
     },
     {
+        id: 2,
         feedback: "Feedback"
     },
     {
+        id: 3,
         feedback: "Feedback"
     }
 ];
 
-
-type TThemesProps = {
-    match: TMatch
-}
-
-type TMatch = {
-    isExact: false
-    path: string
-    url: string
-    params: any
-}
 
 type TOption = {
     value: string
     label: string
 }
 
-const Themes = ({ match } : TThemesProps) => {
+const Themes = ({ match } : TThemesProps<any>) => {
 
     const url: string = match.url;
     

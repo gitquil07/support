@@ -2,6 +2,7 @@ import { OrganizationForm } from "components/Forms/OrganizationForm";
 import { PageHeader } from "components/General";
 import { GoBack } from "components/General";
 import { BottomOffset } from "components/General/Wrappers";
+import { TMatch as TOrganizationEditProps } from "types";
 
 const data = [
     {
@@ -277,19 +278,11 @@ const data = [
     
 ];
 
+type TQueryId = {
+    id: number
+}
 
-type TOrganizationEditProps = {
-    match: TMatch
-};
-
-type TMatch = {
-    isExact: boolean,
-    params: any,
-    url: string,
-    path: string
-};
-
-const OrganizationEdit = ({ match }: TOrganizationEditProps) => {
+const OrganizationEdit = ({ match }: TOrganizationEditProps<TQueryId>) => {
 
     const queryId: number = match.params.id;
 

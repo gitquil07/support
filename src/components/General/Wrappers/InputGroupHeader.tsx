@@ -26,6 +26,6 @@ const SInputGroupHeader = styled.div`
 
 const GroupName = styled.h3`
     font-size: 18px;
-    font-family: ${({ theme }) => theme.fonts.medium};
+    font-family: ${({ theme }) => theme.fonts.regular};
     color: ${({ theme }) => theme.colors.black};
 `;

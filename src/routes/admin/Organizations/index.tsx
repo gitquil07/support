@@ -3,6 +3,7 @@ import { PageHeader } from "components/General";
 import { AddButton } from "components/Buttons"; 
 import { CrudTable } from "components/General";
 import { OrganizationForm } from "components/Forms/OrganizationForm";
+import { TMatch as TOrganizationsProps } from "types";
 
 const columns = [
     "Имя организации",
@@ -122,18 +123,7 @@ const data = [
     
 ]
 
-type TOrganizationsProps = {
-    match: TMatch    
-}
-
-type TMatch = {
-    isExact: boolean,
-    params: any,
-    path: string,
-    url: string
-}
-
-const Organizations = ({ match }: TOrganizationsProps) => {
+const Organizations = ({ match }: TOrganizationsProps<any>) => {
 
     const url: string = match.url;
 

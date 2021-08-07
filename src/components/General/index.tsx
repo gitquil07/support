@@ -7,3 +7,4 @@ export { default as  DateRangePicker } from "./DateRangePicker";
 export { default as CrudTable } from "./CrudTable";
 export { default as GoBack } from "./Back";
 export { default as SideBar } from "./SideBar";
+export { default as Tabs } from "./Tab/TabsContainer";

@@ -2,6 +2,7 @@ import { PageHeader } from "components/General";
 import { CrudTable } from "components/General";
 import { AddButton }  from "components/Buttons";
 import { useHistory } from "react-router-dom";
+import { TMatch as TSystemEditProps } from "types";
 
 const columns = [
     "Название системы",
@@ -140,18 +141,7 @@ const data = [
     
 ];
 
-type TSystemsProps = {
-    match: TMatch
-}
-
-type TMatch = {
-    isExact: boolean
-    params: any
-    url: string,
-    path: string
-}
-
-const Systems = ({ match }: TSystemsProps) => {
+const Systems = ({ match }: TSystemEditProps<any>) => {
 
     const url: string = match.url;
 

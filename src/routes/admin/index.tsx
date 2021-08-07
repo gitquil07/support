@@ -19,6 +19,8 @@ import Feedbacks from "./Feedbacks";
 import Themes from "./Themes";
 import Edit from "./Themes/Edit";
 
+import DataBase from "./DataBase";
+
 
 type TAdminRoutesProps = {
     match: TMatch
@@ -57,6 +59,9 @@ const AdminRoutes = ({ match }: TAdminRoutesProps) => {
 
             <Route path={getUrl("/themes")} component={Themes} exact />
             <Route path={getUrl("/themes/create")} component={Edit} />
+            <Route path={getUrl("/themes/edit/:id")} component={Edit} />
+
+            <Route path={getUrl("/knowledge-base")} component={DataBase} />
         </>
     );
 

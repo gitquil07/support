@@ -2,6 +2,7 @@ import { PageHeader } from "components/General";
 import { CrudTable } from "components/General";
 import { AddButton } from "components/Buttons";
 import { useHistory } from "react-router-dom"; 
+import { TMatch as TTariffsProps } from "types";
 
 const columns = [
     "Название системы"
@@ -83,18 +84,7 @@ const data = [
     
 ];
 
-type TTariffsProps = {
-    match: TMatch
-}
-
-type TMatch = {
-    isExact: boolean
-    params: any
-    url: string
-    path: string
-};
-
-const Tariffs = ({ match }: TTariffsProps) => {
+const Tariffs = ({ match }: TTariffsProps<any>) => {
 
     const url: string = match.url;
 

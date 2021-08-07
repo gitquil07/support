@@ -28,6 +28,7 @@ export default ({ name, handleChange, children }: TFilterSelectProps) => {
 }
 
 const StyledSelectContainer = styled.div`
+    min-width: 161px;
     position: relative;
     
     ::after{

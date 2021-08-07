@@ -1,3 +1,4 @@
+import React from "react";
 import { PageHeader } from "components/General";
 import { GoBack } from "components/General";
 import { BottomOffset } from "components/General/Wrappers";
@@ -7,20 +8,9 @@ import { RegularInput, CustomSelect } from "components/Inputs";
 import { InlineGroup, InputLabel } from "components/General/Wrappers";
 import { FormAddButton, FormCloseButton } from "components/Buttons";
 import { BlueWrapper } from "components/General/Wrappers";
-import React from "react";
+import { TMatch  as TTariffCreateProps } from "types";
 
-type TTariffCreateProps = {
-    match: TMatch
-}
-
-type TMatch = {
-    isExact: boolean
-    params: any
-    url: string
-    path: string
-}
-
-const TariffEdit = ({ match }: TTariffCreateProps) => {
+const TariffEdit = ({ match }: TTariffCreateProps<any>) => {
 
     const queryId: number = match.params.id;
 

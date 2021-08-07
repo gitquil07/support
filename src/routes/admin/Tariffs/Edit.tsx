@@ -1,3 +1,5 @@
+import React from "react";
+import styled from "styled-components";
 import { PageHeader } from "components/General";
 import { GoBack } from "components/General";
 import { CustomSelect } from "components/Inputs";
@@ -7,18 +9,11 @@ import { Form } from "components/General/Form";
 import { RegularInput } from "components/Inputs";
 import { FormAddButton, FormCloseButton } from "components/Buttons";
 import { useAddRemove } from "hooks";
-import styled from "styled-components";
-import React from "react";
+import { TMatch as TTariffEditProps } from "types";
 
-type TTariffEditProps = {
-    match: {
-        isExact: boolean
-        url: string
-        path: string
-        params: {
-            id: number
-        }
-    }
+
+type TQueryId = {
+    id: number
 }
 
 type TTariffState = {
@@ -27,9 +22,9 @@ type TTariffState = {
     price: string
 }
 
-const Edit = ({ match }: TTariffEditProps) => {
+const Edit = ({ match }: TTariffEditProps<TQueryId>) => {
 
-    const id: number = match.params.id;
+    const queryId: number = match.params.id;
 
     const 
     {
